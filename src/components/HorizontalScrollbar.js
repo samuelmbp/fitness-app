@@ -1,16 +1,15 @@
-import React from 'react';
 import { Box } from '@mui/material';
 
-const HorizontalScrollbar = ({ data }) => {
+import BodyPart from './BodyPart';
+
+const HorizontalScrollbar = ({ data, bodyPart, setBodyPart }) => {
 	const renderedData = data.map((item) => {
 		return (
 			<Box key={item.id || item} m="0 40px">
-				{item}
+				<BodyPart item={item} bodyPart={bodyPart} setBodyPart={setBodyPart} />
 			</Box>
 		);
 	});
-
-	console.log(renderedData);
 
 	return <div>{renderedData}</div>;
 };
